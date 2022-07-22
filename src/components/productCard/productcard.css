@@ -1,0 +1,124 @@
+/* STYLE FOR PRODUCTcARD COMPONENT */
+
+.product-wrapper {
+    display: block;
+    width: 90%;
+    margin: .48rem auto;
+    height: auto;
+    padding: 6px 8px;
+    text-align: left;
+    border-radius: 8px;
+    background-color: darkblue;
+}
+
+.product-name-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+}
+
+.remove-product {
+    display: inline;
+    padding: 0 6px;
+    color: red;
+    font-weight: 400;
+    border-radius: 4px;
+    background-color: blue;
+    transition: 0.2s;
+}
+
+.remove-product:active, .remove-product:hover {
+    background-color: red;
+    color: white;
+}
+
+
+/* PRODUCT CARD */
+
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: .6rem auto;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.product-img-wrapper {
+    background-color: aliceblue;
+    width: 25%;
+    padding: 8px 1.5rem;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info-wrapper {
+    /* background-color: antiquewhite; */
+    display: inline-flex;
+    width: 65%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pinfo-subwrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+.product-info {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+.product-calculate-icon {
+    background-color: azure;
+    width: 10%;
+}
+
+.product-calculate {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+    background-color: beige;
+}
+
+.product-consumption-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-bottom: 6px;
+}
+
+/* .product-consumption {} */
+
+@media screen and (min-width: 992px) {
+    .product-wrapper { width: 60%; }
+    .product-img-wrapper { padding: 1rem 2.5rem; }
+}
