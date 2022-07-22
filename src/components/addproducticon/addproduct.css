@@ -49,9 +49,6 @@
 }
 
 .product-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     margin: 10px auto;
     padding: 4px 8px;
@@ -63,12 +60,13 @@
 
 .productmenu-icon {
     width: 2.8rem;
+    padding-top: 5px;
     height: auto;
 }
 
 .productmenu-item-name {
-    display: inline;
-    margin: 0;
+    display: block;
+    margin: 1rem auto;
 }
 
 .productlist-bottombar {

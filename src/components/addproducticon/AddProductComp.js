@@ -22,8 +22,8 @@ function AddProductComp({ addItem }) {
                     {
                         dataset.map(item =>
                             <div key={item.id} className='product-item' onClick={ (event) => { setSelectedItem(item) }}>
-                                <h4 className="productmenu-item-name">{ item.productname }</h4>
                                 <img className='productmenu-icon' src={item.productimg} alt={item.productname} />
+                                <h4 className="productmenu-item-name">{ item.productname }</h4>
                             </div>
                         )
                     }

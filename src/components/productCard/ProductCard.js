@@ -1,9 +1,11 @@
 import React from "react";
 import './productcard.css';
 
-function ProductCard({ productInfo, removeItem }) {
+function ProductCard({ productInfo, removeItem, handleInput }) {
+    
     // extract info from productinfo obj
-    const { id, productname, productimg, productunit } = productInfo
+    const { id, productname, productimg, productunit, enteredData } = productInfo
+
     return (
         <div className='product-wrapper'>
             <div className='product-name-wrapper'>
@@ -16,20 +18,40 @@ function ProductCard({ productInfo, removeItem }) {
                 </div>
                 <div className='product-info-wrapper'>
                     <div className='pinfo-subwrapper'>
-                        <input type='number' className='product-info' placeholder='X' defaultValue={ productunit } />
+                        <input
+                            type='number'
+                            className='product-info'
+                            placeholder='X'
+                            // defaultValue={ productunit }
+                            value={ enteredData.watts > 0 ? enteredData.watts : '' }
+                            onChange={ (e) => handleInput(id, 'watts', e.target.value) }
+                        />
                         <span className='title-level-4'>Watts</span>
                     </div>
                     <div className='pinfo-subwrapper'>
-                        <input type='number' className='product-info' placeholder='X' />
+                        <input
+                            type='number'
+                            className='product-info'
+                            placeholder='X'
+                            value={ enteredData.count > 0 ? enteredData.count : '' }
+                            onChange={ (e) => handleInput(id, 'count', e.target.value) }
+                        />
                         <span className='title-level-4'>Count</span>
                     </div>
                     <div className='pinfo-subwrapper'>
-                        <input type='number' className='product-info' placeholder='X' />
+                        <input
+                            type='number'
+                            className='product-info'
+                            placeholder='X'
+                            value={ enteredData.hours > 0 ? enteredData.hours : '' }
+                            onChange={ (e) => handleInput(id, 'hours', e.target.value) }
+                        />
                         <span className='title-level-4'>Hours</span>
                     </div>
                 </div>
                 <div className='product-calculate-icon'>
-                    <button className='product-calculate'>go</button>
+                    {/* PASSES ID AND INPUT VALUES TO PARENT */}
+                    <button className='product-calculate' onClick={ () => {} }>go</button>
                 </div>
             </div>
             <div className="product-consumption-wrapper">

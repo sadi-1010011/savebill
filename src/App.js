@@ -4,13 +4,15 @@ import './App.css'; // CSS
 // COMPONENTS
 import ProductCard from './components/productCard/ProductCard';
 import AddProductComp from './components/addproducticon/AddProductComp';
+import ResultComp from './components/resultComp/ResultComp';
 
 
 export default function App() {
 
     // PREVIEW 2 DEFAULT DEVICES
-    const previewDevices = dataset.slice(0,2);
-    const [data, setData] = useState([ ...previewDevices ]);    
+    const previewDevices = dataset.slice(0,2); // remove on production build
+    const [data, setData] = useState([ ...previewDevices ]);
+    const [resultDiv, setResultDiv] = useState(true);
     
     function removeItem(id) {
         // removes the item by id
@@ -19,7 +21,27 @@ export default function App() {
 
     function addItem(item) {
         // add item to existing list, if do so
-        setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, productunit: item.productunit }])
+        setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, productunit: item.productunit, enteredData: item.enteredData }])
+    }
+
+    function handleInputData(id, prop, val) {
+        // clone state data to update with new input data
+        let newObj = [ ...data ];
+        // !!! 
+        // apply new data to specific device
+        newObj.forEach(function(item) {
+            if(item.id == id) {
+                item.enteredData = {...item.enteredData, [prop]: Number(val) };
+                console.log(item.enteredData)
+            }
+        });
+        // save to state
+        setData(newObj);
+    }
+
+    function calculateBill(bill) {
+        // calculates bill...
+        console.log('calculating bill..')
     }
 
     return (
@@ -30,10 +52,15 @@ export default function App() {
                         key = {item.id}
                         productInfo = { item }
                         removeItem = { removeItem }
+                        handleInput = { handleInputData }
                     />)
             }
+            {
+                resultDiv && <ResultComp />
+            }
             <AddProductComp addItem = { addItem } />
-            <button className='calculatebill-btn'>calculate</button>
+            <button className='calculatebill-btn' onClick={ () => calculateBill(data) }>calculate</button>
+
         </main>
     );
 }
