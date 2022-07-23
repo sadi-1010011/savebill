@@ -4,8 +4,8 @@ import './productcard.css';
 function ProductCard({ productInfo, removeItem, handleInput }) {
     
     // extract info from productinfo obj
-    const { id, productname, productimg, productunit, enteredData } = productInfo
-
+    const { id, productname, productimg, productunit, enteredData, individualResult } = productInfo
+    
     return (
         <div className='product-wrapper'>
             <div className='product-name-wrapper'>
@@ -55,8 +55,8 @@ function ProductCard({ productInfo, removeItem, handleInput }) {
                 </div>
             </div>
             <div className="product-consumption-wrapper">
-                <div className="product-consumption">units: <span id="individualUnitConsumption">{0}</span></div>
-                <div className="product-consumption">cost: <span id="individualCostConsumption">{0}</span></div>
+                <div className="product-consumption">units: <span id="individualUnitConsumption">{ individualResult.unit }</span></div>
+                <div className="product-consumption">cost: <span id="individualCostConsumption">{ individualResult.cost }</span></div>
             </div>
         </div>
     );
