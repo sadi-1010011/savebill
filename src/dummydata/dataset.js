@@ -21,7 +21,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     }},
-    { id: 2, productname: 'Table Fan', productimg: fanIcon, productunit: 17, enteredData: {
+    { id: 2, productname: 'Cieling Fan', productimg: fanIcon, productunit: 17, enteredData: {
         'watts': 17,
         'count': 0,
         'hours': 0
@@ -29,15 +29,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 3, productname: 'Wall Fan', productimg: wallfanIcon, productunit: 19, enteredData: {
-        'watts': 19,
-        'count': 0,
-        'hours': 0
-    }, individualResult: {
-        unit: 0, 
-        cost: 0
-    } },
-    { id: 4, productname: 'Air Conditionar', productimg: acIcon, productunit: 6, enteredData: {
+    { id: 3, productname: 'Air Conditionar', productimg: acIcon, productunit: 6, enteredData: {
         'watts': 6,
         'count': 0,
         'hours': 0
@@ -45,7 +37,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 5, productname: 'Television', productimg: tvIcon, productunit: 17, enteredData: {
+    { id: 4, productname: 'Television', productimg: tvIcon, productunit: 17, enteredData: {
         'watts': 17,
         'count': 0,
         'hours': 0
@@ -53,7 +45,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 6, productname: 'Fridge', productimg: fridgeIcon, productunit: 19, enteredData: {
+    { id: 5, productname: 'Fridge', productimg: fridgeIcon, productunit: 19, enteredData: {
         'watts': 19,
         'count': 0,
         'hours': 0
@@ -61,7 +53,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 7, productname: 'Ironbox', productimg: ironboxIcon, productunit: 6, enteredData: {
+    { id: 6, productname: 'Ironbox', productimg: ironboxIcon, productunit: 6, enteredData: {
         'watts': 6,
         'count': 0,
         'hours': 0
@@ -69,7 +61,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 8, productname: 'Washing Machine', productimg: washingmachineIcon, productunit: 17, enteredData: {
+    { id: 7, productname: 'Washing Machine', productimg: washingmachineIcon, productunit: 17, enteredData: {
         'watts': 17,
         'count': 0,
         'hours': 0
@@ -77,7 +69,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 9, productname: 'Microwave oven', productimg: microwaveIcon, productunit: 19, enteredData: {
+    { id: 8, productname: 'Microwave oven', productimg: microwaveIcon, productunit: 19, enteredData: {
         'watts': 19,
         'count': 0,
         'hours': 0
@@ -85,7 +77,7 @@ const dataset = [
         unit: 0, 
         cost: 0
     } },
-    { id: 10, productname: 'Blender', productimg: blenderIcon, productunit: 17, enteredData: {
+    { id: 9, productname: 'Blender', productimg: blenderIcon, productunit: 17, enteredData: {
         'watts': 17,
         'count': 0,
         'hours': 0

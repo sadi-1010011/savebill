@@ -1,0 +1,48 @@
+.optimizedcard-wrapper {
+    width: 100%;
+    margin: 3px auto;
+    padding: 6px 1rem;
+}
+
+.optimizedcard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 6px;
+    text-align: center;
+    background-color: rgb(48, 44, 44);
+    border-radius: 12px;
+}
+
+.oicon-wrapper {
+    width: 4rem;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+.oicon {
+    width: 100%;
+    height: auto;
+}
+
+/* .working-hour {}
+
+.preferred-hour {} */
+
+.optimizedcard-title {
+    background-color: brown;
+    margin: .84rem auto;
+    padding: 4px 0;
+    border-radius: 7px;
+}
+
+.bad-usage {
+    background-color: brown;
+}
+
+.good-usage {
+    color: black;
+    background-color: yellowgreen;
+}

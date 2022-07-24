@@ -22,7 +22,7 @@ function ProductCard({ productInfo, removeItem, handleInput }) {
                             type='number'
                             className='product-info'
                             placeholder='X'
-                            // defaultValue={ productunit }
+                            // defaultValue={ productunit } .. to be removed soon from db
                             value={ enteredData.watts > 0 ? enteredData.watts : '' }
                             onChange={ (e) => handleInput(id, 'watts', e.target.value) }
                         />

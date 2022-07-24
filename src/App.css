@@ -1,14 +1,120 @@
-/* APP */
+/* HOME SCREEN */
 
-.main-wrapper {
+.homescreen-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+
+
+/* CALCULATION SCREENS */
+
+.calculationscreen-wrapper {
     display: block;
-    width: 90%;
+    width: 100%;
     min-height: 100vh;
     margin: auto;
     padding: 1rem 0;
     overflow-x: hidden;
-    background-color: blueviolet;
+    background-color: white;
 }
+
+/* ESTIMATION SCREEN */
+
+.estimationscreen-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 0;
+    color: #000;
+    background-color: white;
+}
+
+.estimationcard-container {
+    display: block;
+    width: 100%;
+    padding: .5rem 0;
+    margin: .4rem auto;
+}
+
+.estimation-card {
+    display: block;
+    margin: .6rem auto;
+    padding: 1rem 8px;
+    width: 90%;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+}
+
+.bill-title {
+    margin: .8rem 0;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+
+.targetbill-input {
+    border: none;
+    outline: none;
+    /* background-color: transparent; */
+    display: inline-block;
+    width: 40%;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-align: center;
+    padding: .6rem 0;
+    border-radius: 8px;
+}
+
+
+.optimize-btn {
+    border: 2px solid yellowgreen;
+    padding: .5rem .8rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: black;
+    background-color: chartreuse;
+}
+
+
+/* OPTIMIZATION SCREEN */
+
+.optimizationscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 0;
+    color: white;
+    background-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
