@@ -9,14 +9,15 @@
 .result-unit-wrapper, .result-cost-wrapper {
     width: 46%;
     margin: 0 4px;
-    padding: 1.4rem 0;
+    padding: .5rem 0;
     text-align: center;
-    border-radius: 3px;
-    background-color: cadetblue;
+    border-radius: 2rem;
+    background-color: #2d3232;
 }
 
 .result-unit, .result-cost {
     font-size: 1.3rem;
     font-weight: 600;
     color: white;
+    transition: padding 1s;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import OptimizedCard from '../components/optimizedCard/OptimizedCard';
+import AppBar from "../components/appBar/AppBar";
 import '../App.css';
 
 export default function OptimizationScreen() {
@@ -9,7 +10,7 @@ export default function OptimizationScreen() {
     const { state } = useLocation();
     const { data, currentBill, targetBill } = state;
     const [localStateData, setLocalStateData] = useState({});
-  
+
     // calculation variables
     let diffAmount = 0;
     let diffAmountinPercent = 0;
@@ -51,6 +52,7 @@ export default function OptimizationScreen() {
                         break;
                     }
                 case 'Television': {
+                    // use React hook useRef to preserve data between re-render
                         percentToReduce = (item.enteredData.hours * individualpercent) / 100;
                         hourToReduce = (item.enteredData.hours * percentToReduce) / 100;
                         preferredHour = item.enteredData.hours - hourToReduce;
@@ -66,16 +68,38 @@ export default function OptimizationScreen() {
                     }
             }
 
-            console.log(data);
+            // this re-render on setstate causes data object to be saved with item.optimizedhour variable
             setLocalStateData(data);
-
+            
         });
+        // check if algorithm output is meaningful:
+        console.log(data);
     });
+
+    // DARK LIGHT theme
+    const [appTheme, setAppTheme] = useState('dark');
+    function setCurrentTheme(theme) {
+        setAppTheme(theme);
+    }
+    // DOM manipulation ahead!
+    useEffect(() => {
+        // direct DOM manipulation is not safe, must use useRef hook
+        if (appTheme == 'dark') {
+            document.querySelector('.optimizationscreen').classList.remove('light');
+            document.querySelector('.optimizationscreen').classList.add('dark');
+        }
+        if (appTheme == 'light') {
+            document.querySelector('.optimizationscreen').classList.remove('dark');
+            document.querySelector('.optimizationscreen').classList.add('light');
+        }
+    }, [appTheme]);
+    // - THEME SECTION END -
 
 
     return (
     
         <div className="optimizationscreen">
+            <AppBar theme={ appTheme } changetheme={ setCurrentTheme } />
             {
             data.map(item => <OptimizedCard
                 key={ item.id }
@@ -85,8 +109,10 @@ export default function OptimizationScreen() {
                 preferredHr={ item.optimizedhour }
             />)
         }
-    <h3>current amount:{ currentBill }</h3>
-    <h3>target amount:{ targetBill }</h3>
+            <div className="targetbillinfo-subwrapper">
+                <div className="result-unit-wrapper">current bill: <h2 className="resultbill-info">{ currentBill }</h2></div>
+                <div className="result-unit-wrapper">target bill: <h2 className="resultbill-info">{ targetBill }</h2></div>
+            </div>
         </div>
     );
     

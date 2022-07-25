@@ -10,7 +10,8 @@ import OptimizationScreen from './screens/OptimizationScreen';
 export default function App() {
 
     // PREVIEW 2 DEFAULT DEVICES
-    const previewDevices = dataset.slice(0,1); // remove on production build
+    const previewDevices = dataset.slice(0,2); // remove on production build
+    const [appTheme, setAppTheme] = useState('dark');
     const [data, setData] = useState([ ...previewDevices ]);
     const [resultDiv, setResultDiv] = useState({ visible: false, result: { unit: 0, cost: 0 } });
     
@@ -20,8 +21,19 @@ export default function App() {
     }
 
     function addItem(item) {
-        // add item to existing list, if do so
-        setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, productunit: item.productunit, enteredData: item.enteredData, individualResult: item.individualResult }])
+        // cannot add already added item
+        let alreadyExist = false;
+        data.forEach(elem => {
+            if (elem.id === item.id) {
+                alreadyExist = true;
+            }
+        });
+        // add item to list, if it doesnt exist
+        if(!alreadyExist) {
+            setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, productunit: item.productunit, enteredData: item.enteredData, individualResult: item.individualResult }]);
+        } else {
+            alert(`${item.productname} already exist !`);
+        }
     }
 
     function handleInputData(id, prop, val) {
@@ -41,13 +53,14 @@ export default function App() {
 
     function calculateBill(bill) {
         console.log('calculating bill..');
-        // LOGIC HERE:
-        let billCopy = [ ...bill ];
 
+        let billCopy = [ ...bill ];
+        
+        // LOGIC HERE:
         // loops through each item
         billCopy.forEach(function(item) {
             let { watts, count, hours } = item.enteredData;
-            // APPLY LOGIC
+            // APPLY EQUATION
             item.individualResult.unit = (watts * count * hours * 30) / 1000;
             item.individualResult.cost = (watts * count * hours * 30 * 6.15) / 1000;
         });

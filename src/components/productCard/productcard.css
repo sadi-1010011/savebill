@@ -3,12 +3,13 @@
 .product-wrapper {
     display: block;
     width: 90%;
-    margin: .48rem auto;
+    margin: .88rem auto;
     height: auto;
-    padding: 6px 8px;
+    padding: 0 8px;
     text-align: left;
     border-radius: 8px;
-    background-color: #808080;
+    background-color: #2c3034ba;
+    transition: padding 0.5s;
 }
 
 .product-name-wrapper {
@@ -27,11 +28,10 @@
 
 .remove-product {
     display: inline;
-    padding: 0 6px;
+    padding: 0 8px;
     color: red;
     font-weight: 400;
     border-radius: 4px;
-    background-color: blue;
     transition: 0.2s;
 }
 
@@ -50,15 +50,16 @@
     margin: .6rem auto;
     padding: 4px 6px;
     border-radius: 4px;
-    background-color: white;
+    background-color: rgb(21, 21, 21);
     overflow: hidden;
 }
 
 
 .product-img-wrapper {
-    background-color: aliceblue;
+    background-color: rgb(120, 131, 139);
     width: 25%;
     padding: 8px 1.5rem;
+    border-radius: 8px;
 }
 
 .product-img {
@@ -67,7 +68,6 @@
 }
 
 .product-info-wrapper {
-    /* background-color: antiquewhite; */
     display: inline-flex;
     width: 65%;
     align-items: center;
@@ -81,7 +81,6 @@
     justify-content: space-around;
     width: 100%;
     height: 100%;
-    color: black;
 }
 
 .product-info {
@@ -89,8 +88,10 @@
     width: 100%;
     text-align: center;
     font-size: 1.2rem;
+    font-weight: 500;
     border: none;
     outline: none;
+    color: #fff;
     background-color: transparent;
 }
 
@@ -98,6 +99,7 @@
 .product-calculate-icon {
     background-color: azure;
     width: 10%;
+    border-radius: 8px;
 }
 
 .product-calculate {
@@ -105,7 +107,8 @@
     height: 100%;
     border: none;
     border-radius: 6px;
-    background-color: beige;
+    color: white;
+    background-color: rgb(75, 81, 85);
 }
 
 .product-consumption-wrapper {

@@ -1,3 +1,4 @@
+
 /* HOME SCREEN */
 
 .homescreen-wrapper {
@@ -7,10 +8,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: white;
+    background-color: #000;
 }
 
+.app-logo {
+    width: 40vw;
+    height: auto;
+}
 
+.go-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 5vh;
+    right: calc(50vw - 25px);
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.23s;
+    z-index: 999;
+    background-color: lightslategray;
+  }
+
+.go-btn:hover {
+    /* transform: scale(1.13) rotate(360deg); */
+    transform: scale(1.13);
+    background-color: aqua;
+}
+
+  /* ACTIVE COLOR #7dddf4 */
+
+/*   !!! all screens are in dark theme by defaultf !!!   */
 
 /* CALCULATION SCREENS */
 
@@ -20,8 +48,11 @@
     min-height: 100vh;
     margin: auto;
     padding: 1rem 0;
+    padding-top: 2.4rem;
     overflow-x: hidden;
-    background-color: white;
+    transition: 1.12s;
+    /* color: white;
+    background-color: #000; */
 }
 
 /* ESTIMATION SCREEN */
@@ -34,8 +65,10 @@
     width: 100%;
     min-height: 100vh;
     padding: 2rem 0;
+    transition: 1.12s;
     color: #000;
-    background-color: white;
+    /* color: #000;
+    background-color: #000; */
 }
 
 .estimationcard-container {
@@ -94,12 +127,25 @@
     width: 100%;
     min-height: 100vh;
     padding: 2rem 0;
+    transition: 1.12s;
     color: white;
-    background-color: #000;
+    /* color: white;
+    background-color: #000; */
+}
+
+.targetbillinfo-subwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: .6rem auto;
+    padding: 1rem 12px;
 }
 
 
-
+.resultbill-info {
+    margin: .6rem auto;
+}
 
 
 
@@ -128,9 +174,14 @@
 
 .visibleflex {
     display: flex!important;
+    opacity: 1;
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none;
+    opacity: 0;
+    padding: 0;
+}
 
 
 /* STANDALONE ELEMENTS */

@@ -14,9 +14,21 @@ body {
     font-size: 18px;
     line-height: 1.2;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: white;
-    color: wheat;
+    color: white;
+    background-color: #000;
     overflow-x: hidden;
+}
+
+/* DARK THEME : DEFAULT */
+
+.dark {
+    color: white;
+    background-color: black!important;
+}
+
+.light {
+    color: black;
+    background-color: white!important;
 }
 
 ::-webkit-scrollbar { display: none; }

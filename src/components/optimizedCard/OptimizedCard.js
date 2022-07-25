@@ -2,20 +2,34 @@ import React from "react";
 import './optimizedCard.css';
 
 export default function OptimizedCard({ name, icon, workinghr, preferredHr }) {
+
+    // used to convert hour to minutes
+    function getMinutesfromHours(hour) {
+        return (hour * 60).toFixed(1);
+    }
+
+    const minutesToReduce = getMinutesfromHours(workinghr - preferredHr)
+
     return (
         <div className="optimizedcard-wrapper">
-            <div className="optimizedcard">
-                <div className="oicon-wrapper">
-                    <img className="oicon" src={ icon } alt={ name } />
+            <div className="optimized-subwrapper">
+                <div className="optimizedcard">
+                    <div className="oicon-wrapper">
+                        <img className="oicon" src={ icon } alt={ name } />
+                    </div>
+                    <div className="working-hours">
+                        <h4>working hr</h4>
+                        <h2 className={ (minutesToReduce > 0) ?  `optimizedcard-title bad-usage` : `optimizedcard-title good-usage`  }>{ workinghr }</h2>
+                    </div>
+                    <div className="preferred-hours">
+                        { (minutesToReduce > 0) && <> <h4>preferred hr</h4> <h2 className="optimizedcard-title good-usage">{ preferredHr }</h2> </> }
+                    </div>
                 </div>
-                <div className="working-hours">
-                    <h4>working hr</h4>
-                    <h2 className={ preferredHr ?  `optimizedcard-title bad-usage` : `optimizedcard-title good-usage`  }>{ workinghr }</h2>
-                </div>
-                <div className="preferred-hours">
-                    { preferredHr && <> <h4>preferred hr</h4> <h2 className="optimizedcard-title good-usage">{ preferredHr }</h2> </> }
-
-                </div>
+                <h5 className="optimized-note">
+                    { minutesToReduce > 0 ? `Reduce usage of each ${ name }, by ${ minutesToReduce } minutes.` 
+                                  : `${ name } usage is ok`
+                    }
+                </h5>
             </div>
         </div>           
     );

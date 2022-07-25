@@ -1,0 +1,18 @@
+
+/* APPBAR */
+
+.app-topbar {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+}
+
+.appbar-logo {
+    height: 0.9rem;
+    width: auto;
+}

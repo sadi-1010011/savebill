@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
 import './productcard.css';
 
 function ProductCard({ productInfo, removeItem, handleInput }) {
     
     // extract info from productinfo obj
     const { id, productname, productimg, productunit, enteredData, individualResult } = productInfo
+
+    // little UX here ;)
+    const domProductCard = useRef(null);
+    useEffect(() => {
+        // console.log(('runs on every component mount'));
+        domProductCard.current.style.padding = '8px';
+    }, []);
     
     return (
-        <div className='product-wrapper'>
+        <div className='product-wrapper' ref={ domProductCard }>
             <div className='product-name-wrapper'>
                 <span className='product-name'>{ productname }</span>
                 <div className='remove-product' onClick={ () => removeItem(id) }>x</div>
@@ -51,12 +58,12 @@ function ProductCard({ productInfo, removeItem, handleInput }) {
                 </div>
                 <div className='product-calculate-icon'>
                     {/* PASSES ID AND INPUT VALUES TO PARENT */}
-                    <button className='product-calculate' onClick={ () => {} }>go</button>
+                    <button className='product-calculate' onClick={ () => {} }>...</button>
                 </div>
             </div>
             <div className="product-consumption-wrapper">
-                <div className="product-consumption">units: <span id="individualUnitConsumption">{ individualResult.unit }</span></div>
-                <div className="product-consumption">cost: <span id="individualCostConsumption">{ individualResult.cost }</span></div>
+                <div className="product-consumption">units: <span id="individualUnitConsumption">{ (individualResult.unit).toFixed(1) }</span></div>
+                <div className="product-consumption">cost: <span id="individualCostConsumption">{ (individualResult.cost).toFixed(2) }</span></div>
             </div>
         </div>
     );
