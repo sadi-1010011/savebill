@@ -2,6 +2,7 @@ import React from "react";
 import ebimoLogoWhite from '../../assets/png/ebimo-white.png';
 import ebimoLogoBlack from '../../assets/png/ebimo-black.png';
 import './appBar.css';
+import { Link } from "react-router-dom";
 
 export default function AppBar({ theme, changetheme }) {
     const oppositeTheme = theme == 'dark' ? 'light' : 'dark';
@@ -9,7 +10,9 @@ export default function AppBar({ theme, changetheme }) {
     return (
         <div className="app-topbar">
             <div className="appbar-logo-wrapper">
-                <img className="appbar-logo" src={ themedLogo } alt='app-logo' />
+                <Link to='/'>
+                    <img className="appbar-logo" src={ themedLogo } alt='app-logo' />
+                </Link>
             </div>
             <div className="theme-setter" style={{ 'color': theme == 'dark' ? 'white' : 'black' }} onClick={ () => changetheme(oppositeTheme) }>{ oppositeTheme }</div>
         </div>
