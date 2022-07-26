@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ebimo/static/css/main.53043e00.css",
-    "main.js": "/ebimo/static/js/main.f62aae6e.js",
-    "static/media/wallfan.png": "/ebimo/static/media/wallfan.a15c2765b6486a150d1e.png",
-    "index.html": "/ebimo/index.html",
-    "static/media/arrow-right.svg": "/ebimo/static/media/arrow-right.914c0d42b4cadc5272980be8f4934d4b.svg",
-    "main.53043e00.css.map": "/ebimo/static/css/main.53043e00.css.map",
-    "main.f62aae6e.js.map": "/ebimo/static/js/main.f62aae6e.js.map"
+    "main.css": "/static/css/main.53043e00.css",
+    "main.js": "/static/js/main.ded7f234.js",
+    "static/media/wallfan.png": "/static/media/wallfan.a15c2765b6486a150d1e.png",
+    "index.html": "/index.html",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.914c0d42b4cadc5272980be8f4934d4b.svg",
+    "main.53043e00.css.map": "/static/css/main.53043e00.css.map",
+    "main.ded7f234.js.map": "/static/js/main.ded7f234.js.map"
   },
   "entrypoints": [
     "static/css/main.53043e00.css",
-    "static/js/main.f62aae6e.js"
+    "static/js/main.ded7f234.js"
   ]
 }
