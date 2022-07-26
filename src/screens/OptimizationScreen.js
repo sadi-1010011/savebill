@@ -84,11 +84,11 @@ export default function OptimizationScreen() {
     // DOM manipulation ahead!
     useEffect(() => {
         // direct DOM manipulation is not safe, must use useRef hook
-        if (appTheme == 'dark') {
+        if (appTheme === 'dark') {
             document.querySelector('.optimizationscreen').classList.remove('light');
             document.querySelector('.optimizationscreen').classList.add('dark');
         }
-        if (appTheme == 'light') {
+        if (appTheme === 'light') {
             document.querySelector('.optimizationscreen').classList.remove('dark');
             document.querySelector('.optimizationscreen').classList.add('light');
         }
