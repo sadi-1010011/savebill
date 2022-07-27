@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import '../App.css'; // CSS
 // COMPONENTS
 import AppBar from "../components/appBar/AppBar";
@@ -8,8 +10,13 @@ import ResultComp from '../components/resultComp/ResultComp';
 
 export default function CalculationScreen({ data, addItem, removeItem, handleInputData, calculateBill, resultDiv }) {
 
+    // get data through loacation API
+    const { state } = useLocation();
+    const greetName = state ? state : 'user';
+
     // DARK LIGHT theme
     const [appTheme, setAppTheme] = useState('dark');
+    const [username, setUsername] = useState(greetName);
     function setCurrentTheme(theme) {
         setAppTheme(theme);
     }
@@ -27,9 +34,10 @@ export default function CalculationScreen({ data, addItem, removeItem, handleInp
     }, [appTheme]);
     // - THEME SECTION END -
 
+
     return (
         <main className='calculationscreen-wrapper'>
-        <AppBar theme={ appTheme } changetheme={ setCurrentTheme } />
+        <AppBar theme={ appTheme } changetheme={ setCurrentTheme } greetUser={ username } />
         {
             data.map(item =>
                 <ProductCard

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import dataset from './dummydata/dataset'; // DATA
 // SCREENS
+import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import CalculationScreen from './screens/CalculationScreen';
 import EstimationScreen from './screens/EstimationScreen';
@@ -87,6 +88,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route exact path='/' element={ <HomeScreen /> }></Route>
+                <Route exact path='/loginscreen' element={ <LoginScreen /> }></Route>
                 <Route exact path='/calculationscreen' element={
                     <CalculationScreen
                         data={ data }

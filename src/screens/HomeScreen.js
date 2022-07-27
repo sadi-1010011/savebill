@@ -9,7 +9,7 @@ export default function HomeScreen() {
     return (
         <div className={ `homescreen-wrapper ${ appTheme === 'dark' ? 'dark' : 'light' }` }>
             <img src={ebimoLogo} className='app-logo' />
-            <Link to='/calculationscreen'>
+            <Link to='/loginscreen'>
                 <img src={arrowRightLogo} className='go-btn' />
             </Link>
         </div>

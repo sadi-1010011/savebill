@@ -16,3 +16,9 @@
     height: 0.9rem;
     width: auto;
 }
+
+.greet-user {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 0.89rem;
+}
