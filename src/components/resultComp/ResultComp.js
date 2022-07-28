@@ -1,13 +1,15 @@
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './ResultComp.css';
 
 export default function ResultComp({ result, optimizeData }) {
     
     const navigate = useNavigate();
+    const { state } = useLocation();
+    const theme = state.theme;
+
     // little UX here ;)
     const resultcard = useRef(null);
-
     function animateThisComponent() {
         console.log('animating this');
         resultcard.current.style.padding = '3rem';
@@ -32,7 +34,7 @@ export default function ResultComp({ result, optimizeData }) {
             </div>
         </div>
         <div>
-            <button className='optimize-btn' onClick={ () => navigate('/estimationscreen', { state: optimizeData }) }>optimize</button>
+            <button className='optimize-btn' onClick={ () => navigate('/estimationscreen', { state: { optimizeData, theme } }) }>optimize</button>
         </div>
         </>
     );

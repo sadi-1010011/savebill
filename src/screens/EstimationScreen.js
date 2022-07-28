@@ -8,8 +8,15 @@ export default function EstimationScreen() {
     const [totalCost, setTotalCost] = useState(0);
     const [targetCost, setTargetCost] = useState(0);
 
+     // get data through loacation API
+     const navigate = useNavigate();
+     const { state } = useLocation();
+     const data = state.optimizeData;
+     const theme = state.theme;
+     let total = 0;
+
     // DARK LIGHT theme-
-    const [appTheme, setAppTheme] = useState('dark');
+    const [appTheme, setAppTheme] = useState(theme);
     function setCurrentTheme(theme) {
         setAppTheme(theme);
     }
@@ -27,14 +34,10 @@ export default function EstimationScreen() {
     }, [appTheme]);
     // THEME SECTION END-
 
-    // get data through loacation API
-    const { state } = useLocation();
-    const navigate = useNavigate();
-    let total = 0;
 
     // sum up total cost    
     useEffect(() => {
-        state.forEach(function(item) {
+        data.forEach(function(item) {
             total += Math.floor(item.individualResult.cost);
         });
         setTotalCost(total);
@@ -58,7 +61,7 @@ export default function EstimationScreen() {
                     <input onChange={ (e) => getTargetbill(e.target.value) } value={ targetCost > 0 ? targetCost : '' } type='number' className="targetbill-input" placeholder="$ ..." />
                 </div>
             </div>
-            <button onClick={ () => navigate('/optimizationscreen', { state: { data: state, currentBill: totalCost, targetBill: targetCost  }}) } className="optimize-btn">optimize</button>
+            <button onClick={ () => navigate('/optimizationscreen', { state: { data: data, currentBill: totalCost, targetBill: targetCost, theme: appTheme  }}) } className="optimize-btn">optimize</button>
         </div>
     );
 }

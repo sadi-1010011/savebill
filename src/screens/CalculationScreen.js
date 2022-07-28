@@ -12,10 +12,11 @@ export default function CalculationScreen({ data, addItem, removeItem, handleInp
 
     // get data through loacation API
     const { state } = useLocation();
-    const greetName = state ? state : 'user';
+    const { uname, theme } = state;
+    const greetName = uname ? uname : 'user';
 
     // DARK LIGHT theme
-    const [appTheme, setAppTheme] = useState('dark');
+    const [appTheme, setAppTheme] = useState(theme);
     const [username, setUsername] = useState(greetName);
     function setCurrentTheme(theme) {
         setAppTheme(theme);

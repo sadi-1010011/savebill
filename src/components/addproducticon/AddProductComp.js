@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './addproduct.css';
 import plusIcon from '../../assets/png/plus.png'; // ICON
 import dataset from '../../dummydata/dataset'; // DATA

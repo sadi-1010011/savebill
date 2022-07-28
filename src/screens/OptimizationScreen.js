@@ -8,9 +8,11 @@ export default function OptimizationScreen() {
 
     // extract data, values..
     const { state } = useLocation();
-    const { data, currentBill, targetBill } = state;
+    const { data, currentBill, targetBill, theme } = state;
     const [localStateData, setLocalStateData] = useState({});
 
+    console.log(theme)
+    
     // calculation variables
     let diffAmount = 0;
     let diffAmountinPercent = 0;
@@ -23,7 +25,7 @@ export default function OptimizationScreen() {
     // OPTIMIZATION ALGORITHM GOES HERE:
 
     useEffect(() => {
-        // cost difference to be reduced - 472
+        // cost difference to be reduced
         diffAmount = currentBill - targetBill;
         // converts cost diff into %
         diffAmountinPercent = (diffAmount * 100) / currentBill;
@@ -77,7 +79,7 @@ export default function OptimizationScreen() {
     });
 
     // DARK LIGHT theme
-    const [appTheme, setAppTheme] = useState('dark');
+    const [appTheme, setAppTheme] = useState(theme);
     function setCurrentTheme(theme) {
         setAppTheme(theme);
     }
@@ -99,7 +101,7 @@ export default function OptimizationScreen() {
     return (
     
         <div className="optimizationscreen">
-            <AppBar theme={ appTheme } changetheme={ setCurrentTheme } />
+            <AppBar theme={ theme } changetheme={ setCurrentTheme } />
             {
             data.map(item => <OptimizedCard
                 key={ item.id }

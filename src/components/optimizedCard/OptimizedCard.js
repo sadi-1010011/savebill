@@ -26,7 +26,7 @@ export default function OptimizedCard({ name, icon, workinghr, preferredHr }) {
                     </div>
                 </div>
                 <h5 className="optimized-note">
-                    { minutesToReduce > 0 ? `Reduce usage of each ${ name }, by ${ minutesToReduce } minutes.` 
+                    { minutesToReduce > 0 ? `Reduce overall usage of ${ name }, by ${ minutesToReduce } minutes evereday.` 
                                   : `${ name } usage is ok`
                     }
                 </h5>

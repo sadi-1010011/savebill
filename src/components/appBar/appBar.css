@@ -22,3 +22,14 @@
     font-weight: 600;
     font-size: 0.89rem;
 }
+
+.theme-setter {
+    padding: .64rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.theme-setter:active, .theme-setter:hover {
+    box-shadow: 0px 0px 13px 5px white;
+}

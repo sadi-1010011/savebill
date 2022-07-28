@@ -4,7 +4,7 @@ import './productcard.css';
 function ProductCard({ productInfo, removeItem, handleInput }) {
     
     // extract info from productinfo obj
-    const { id, productname, productimg, productunit, enteredData, individualResult } = productInfo
+    const { id, productname, productimg, enteredData, individualResult } = productInfo
 
     // little UX here ;)
     const domProductCard = useRef(null);
@@ -29,7 +29,6 @@ function ProductCard({ productInfo, removeItem, handleInput }) {
                             type='number'
                             className='product-info'
                             placeholder='X'
-                            // defaultValue={ productunit } .. to be removed soon from db
                             value={ enteredData.watts > 0 ? enteredData.watts : '' }
                             onChange={ (e) => handleInput(id, 'watts', e.target.value) }
                         />

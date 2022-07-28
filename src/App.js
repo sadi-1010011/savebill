@@ -31,7 +31,7 @@ export default function App() {
         });
         // add item to list, if it doesnt exist
         if(!alreadyExist) {
-            setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, productunit: item.productunit, enteredData: item.enteredData, individualResult: item.individualResult }]);
+            setData(prevData => [...prevData, { id: item.id, productname: item.productname, productimg: item.productimg, enteredData: item.enteredData, individualResult: item.individualResult }]);
         } else {
             alert(`${item.productname} already exist !`);
         }
