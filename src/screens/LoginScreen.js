@@ -14,7 +14,7 @@ export default function LoginScreen() {
             <AppTheme theme={ appTheme } changetheme={ (theme) => setAppTheme(theme) } />
             <input type="text" id="uname" placeholder="username.." value={ username } onChange={ (e) => setUsername(e.target.value) } />
             <input type="number" id="psswd" placeholder="phone.." />
-            <div onClick={ () => navigate('/calculationscreen', { state: { username: username, theme: appTheme } }) }>
+            <div onClick={ () => navigate('/calculationscreen', { state: { uname: username, theme: appTheme } }) }>
                 <button id="signin">enter</button>
             </div>
         </div>

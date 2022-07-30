@@ -12,19 +12,20 @@ export default function OptimizationScreen() {
     const [localStateData, setLocalStateData] = useState({});
 
     console.log(theme)
-    
-    // calculation variables
-    let diffAmount = 0;
-    let diffAmountinPercent = 0;
-    let individualpercent = 0;
-    let percentToReduce = 0;
-    let hourToReduce = 0;
-    let preferredHour = 0;
-    
+        
 
     // OPTIMIZATION ALGORITHM GOES HERE:
 
     useEffect(() => {
+
+        // calculation variables
+        let diffAmount = 0;
+        let diffAmountinPercent = 0;
+        let individualpercent = 0;
+        let percentToReduce = 0;
+        let hourToReduce = 0;
+        let preferredHour = 0;
+
         // cost difference to be reduced
         diffAmount = currentBill - targetBill;
         // converts cost diff into %
@@ -68,11 +69,11 @@ export default function OptimizationScreen() {
                         item.optimizedhour = (preferredHour).toPrecision(3);
                         break;
                     }
+                default : ;
             }
 
             // this re-render on setstate causes data object to be saved with item.optimizedhour variable
-            setLocalStateData(data);
-            
+            setLocalStateData(data);            
         });
         // check if algorithm output is meaningful:
         console.log(data);

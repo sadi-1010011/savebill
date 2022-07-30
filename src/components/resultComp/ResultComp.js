@@ -10,13 +10,9 @@ export default function ResultComp({ result, optimizeData }) {
 
     // little UX here ;)
     const resultcard = useRef(null);
-    function animateThisComponent() {
-        console.log('animating this');
-        resultcard.current.style.padding = '3rem';
-        return 0;
-    }
 
     useEffect(() => {
+        // animation effects ..
         // console.log(('result card test..'));
     });
 

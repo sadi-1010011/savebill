@@ -12,7 +12,6 @@ export default function App() {
 
     // PREVIEW 2 DEFAULT DEVICES
     const previewDevices = dataset.slice(0,2); // remove on production build
-    const [appTheme, setAppTheme] = useState('dark');
     const [data, setData] = useState([ ...previewDevices ]);
     const [resultDiv, setResultDiv] = useState({ visible: false, result: { unit: 0, cost: 0 } });
     

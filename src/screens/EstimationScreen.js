@@ -23,11 +23,11 @@ export default function EstimationScreen() {
     // DOM manipulation ahead!
     useEffect(() => {
         // direct DOM manipulation is not safe, must use useRef hook
-        if (appTheme == 'dark') {
+        if (appTheme === 'dark') {
             document.querySelector('.estimationscreen-wrapper').classList.remove('light');
             document.querySelector('.estimationscreen-wrapper').classList.add('dark');
         }
-        if (appTheme == 'light') {
+        if (appTheme === 'light') {
             document.querySelector('.estimationscreen-wrapper').classList.remove('dark');
             document.querySelector('.estimationscreen-wrapper').classList.add('light');
         }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import '../App.css'; // CSS
 // COMPONENTS
@@ -13,17 +13,16 @@ export default function CalculationScreen({ data, addItem, removeItem, handleInp
     // get data through loacation API
     const { state } = useLocation();
     const { uname, theme } = state;
-    const greetName = uname ? uname : 'user';
 
     // DARK LIGHT theme
     const [appTheme, setAppTheme] = useState(theme);
-    const [username, setUsername] = useState(greetName);
+    const [username, setUsername] = useState('user');
     function setCurrentTheme(theme) {
         setAppTheme(theme);
     }
     // DOM manipulation ahead!
     useEffect(() => {
-        // direct DOM manipulation is not safe, must use useRef hook
+        // direct DOM manipulation is not safe, must use useRef hook, soon
         if (appTheme === 'dark') {
             document.querySelector('.calculationscreen-wrapper').classList.remove('light');
             document.querySelector('.calculationscreen-wrapper').classList.add('dark');
@@ -32,7 +31,9 @@ export default function CalculationScreen({ data, addItem, removeItem, handleInp
             document.querySelector('.calculationscreen-wrapper').classList.remove('dark');
             document.querySelector('.calculationscreen-wrapper').classList.add('light');
         }
-    }, [appTheme]);
+        // set username
+        setUsername(uname ? uname : 'user');
+    }, [appTheme, uname]);
     // - THEME SECTION END -
 
 
